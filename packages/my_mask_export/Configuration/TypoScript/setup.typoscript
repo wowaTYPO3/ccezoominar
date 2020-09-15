@@ -1,0 +1,38 @@
+tt_content.mymaskexport_accordeon = FLUIDTEMPLATE
+tt_content.mymaskexport_accordeon {
+    layoutRootPaths.0 = EXT:my_mask_export/Resources/Private/Layouts/
+    layoutRootPaths.10 = {$plugin.tx_mymaskexport.view.layoutRootPath}
+    partialRootPaths.0 = EXT:my_mask_export/Resources/Private/Partials/
+    partialRootPaths.10 = {$plugin.tx_mymaskexport.view.partialRootPath}
+    templateRootPaths.0 = EXT:my_mask_export/Resources/Private/Templates/Content/
+    templateRootPaths.10 = {$plugin.tx_mymaskexport.view.templateRootPath}
+    templateName = Accordeon
+    dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+        if.isTrue.field = tx_mymaskexport_accordionelement
+        table = tx_mymaskexport_accordionelement
+        pidInList.field = pid
+        where = parentid=###uid### AND deleted=0 AND hidden=0
+        orderBy = sorting
+        markers.uid.field = uid
+        as = data_tx_mymaskexport_accordionelement
+    }
+dataProcessing.10 {
+        dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+    dataProcessing.10 {
+        if.isTrue.field = tx_mymaskexport_elementcontent
+        table = tt_content
+        pidInList.field = pid
+        where = tx_mymaskexport_elementcontent_parent=###uid### AND deleted=0 AND hidden=0 AND colPos=###colPos### AND CType IN (###CType1###, ###CType2###, ###CType3###, ###CType4###)
+        orderBy = sorting
+        markers.colPos.value = 999
+        markers.CType1.value = textmedia
+        markers.CType2.value = table
+        markers.CType3.value = shortcut
+        markers.CType4.value = list
+        markers.uid.field = uid
+        as = data_tx_mymaskexport_elementcontent
+    }
+
+}
+}

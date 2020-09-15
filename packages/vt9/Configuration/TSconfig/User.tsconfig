@@ -1,0 +1,12 @@
+options {
+    clearCache.pages = 1
+    pageTree.showPageIdWithTitle = 1
+    #pageTree.backgroundColor.15 = rgba(255,0,0,0.3)
+}
+options.showDuplicate.tt_content = 1
+
+#options.file_list.thumbnail.width = 256
+#options.file_list.thumbnail.height = 256
+
+#mod.web_layout.localization.enableCopy = 0
+#mod.web_layout.localization.enableTranslate = 1

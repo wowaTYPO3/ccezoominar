@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <div class="container">
+      <f:link.page pageUid="{settings.rootId}" class="navbar-brand" title="{settings.siteTitle}">
+        <f:image src="{settings.siteLogo}" alt="{settings.siteTitle}" class="img-fluid" width="200"/>
+      </f:link.page>
+      <!--<a class="navbar-brand" href="#">Navbar</a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="nav navbar-nav mr-auto">
+            <f:for each="{mainMenu}" as="mainMenuItem">
+              <li class="nav-item{f:if(condition:'{mainMenuItem.children}', then: ' dropdown')}"><a class="nav-link{f:if(condition:'{mainMenuItem.children}', then: ' dropdown-toggle')}{f:if(condition:'{mainMenuItem.current}', then: ' current')}{f:if(condition:'{mainMenuItem.active}', then: ' active')}" href="{mainMenuItem.link}">{mainMenuItem.title}</a>
+              <f:if condition="{mainMenuItem.children}">
+                <f:render section="subMenu" arguments="{subMenu: mainMenuItem.children}"/>
+              </f:if>
+              </li>
+            </f:for>
+          </ul>
+          <f:if condition="{languageMenu}">
+            <f:render partial="LanguageMenu" arguments="{_all}"/>
+          </f:if>
+          <f:if condition="{searchbox}">
+            <f:format.raw>{searchbox}</f:format.raw>
+          </f:if>
+      </div>
+    </div>
+  </nav>
+
+<f:section name="subMenu">
+    <ul class="dropdown-menu">
+        <f:for each="{subMenu}" as="subItem">
+            <li class="{f:if(condition:'{subItem.children}', then: ' dropdown')}">
+              <a class="dropdown-item{f:if(condition:'{subItem.children}', then: ' dropdown-toggle')}{f:if(condition:'{subItem.current}', then: ' current')}" href="{subItem.link}">
+                {subItem.title}
+                <f:if condition="{subItem.files}">
+                  <f:for each="{subItem.files}" as="file">
+                    <f:image image="{file}" class="menuicon" width="50" />
+                  </f:for>
+                </f:if>
+              </a>
+              <f:if condition="{subItem.children}">
+                <f:render section="subMenu" arguments="{subMenu: subItem.children}"/>
+              </f:if>
+              </li>
+        </f:for>
+        </ul>
+</f:section>
+
+</f:spaceless>
+</html>

@@ -1,0 +1,33 @@
+<f:layout name="General" />
+<!--
+=====================
+Templates/SearchForm.html
+-->
+<f:section name="content">
+	<form class="form-inline" method="get" id="form_kesearch_pi1" name="form_kesearch_pi1"  action="{f:uri.page(pageUid: targetpage)}">
+			<f:if condition="{targetpage}">
+				<input type="hidden" name="id" value="{targetpage}" />
+			</f:if>
+			<f:if condition="{lparam}">
+				<input type="hidden" name="L" value="{lparam}" />
+			</f:if>
+			<f:if condition="{mpparam}">
+				<input type="hidden" name="MP" value="{mpparam}" />
+			</f:if>
+			<f:if condition="{typeparam}">
+				<input type="hidden" name="type" value="{typeparam}" />
+			</f:if>
+
+			<input class="form-control mr-2" type="text" name="tx_kesearch_pi1[sword]" value="{searchword -> f:format.raw()}" placeholder="{searchwordDefault}" />
+
+			<input id="kesearchpagenumber" type="hidden" name="tx_kesearch_pi1[page]" value="{page}" />
+			<input id="resetFilters" type="hidden" name="tx_kesearch_pi1[resetFilters]" value="0" />
+			<input id="sortByField" type="hidden" name="tx_kesearch_pi1[sortByField]" value="{sortByField}" />
+			<input id="sortByDir" type="hidden" name="tx_kesearch_pi1[sortByDir]" value="{sortByDir}" />
+
+			<button class="btn btn-success" type="submit">{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:submit')}</button>
+			<f:if condition="{filters}">
+				<div id="kesearch_filters"><f:render partial="Filters" arguments="{conf: conf, numberofresults: numberofresults, resultrows: resultrows, filters: filters}" /></div>
+			</f:if>
+	</form>
+</f:section>

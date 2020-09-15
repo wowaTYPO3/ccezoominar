@@ -1,0 +1,95 @@
+# Load default processing options
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    contentsCss: "EXT:vt9/Resources/Public/Css/rte.css"
+    stylesSet:
+      - { name: "Bootstrap Table", element: "table", attributes: { class: "table"}}
+      - { name: "Button Primary", element: "a", attributes: { class: "btn btn-primary"}}
+      - { name: "Button Secondary", element: "a", attributes: { class: "btn btn-secondary"}}
+      - { name: "Button Success", element: "a", attributes: { class: "btn btn-success"}}
+      - { name: "Button Info", element: "a", attributes: { class: "btn btn-info"}}
+      - { name: "Button Warning", element: "a", attributes: { class: "btn btn-warning"}}
+      - { name: "Button Danger", element: "a", attributes: { class: "btn btn-danger"}}
+      - { name: "Alert Primary", element: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'], attributes: { class: "alert alert-primary"}}
+      - { name: "Alert Secondary", element: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'], attributes: { class: "alert alert-secondary"}}
+      - { name: "Alert Success", element: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'], attributes: { class: "alert alert-success"}}
+      - { name: "Alert Info", element: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'], attributes: { class: "alert alert-info"}}
+      - { name: "Alert Warning", element: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'], attributes: { class: "alert alert-warning"}}
+      - { name: "Alert Danger", element: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'], attributes: { class: "alert alert-danger"}}
+
+    format_tags: "p;h1;h2;h3;h4;h5;pre"
+
+    toolbarGroups:
+      - { name: 'document', groups: [ 'mode', 'document', 'doctools' ] }
+      - { name: 'clipboard', groups: [ 'clipboard', 'undo' ] }
+      - { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+      - { name: 'forms', groups: [ 'forms' ] }
+      - { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+      - { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] }
+      - { name: 'links', groups: [ 'links' ] }
+      - { name: 'insert', groups: [ 'insert' ] }
+      - { name: 'styles', groups: [ 'styles' ] }
+      - { name: 'colors', groups: [ 'colors' ] }
+      - { name: 'tools', groups: [ 'tools' ] }
+      - { name: 'others', groups: [ 'others' ] }
+      - { name: 'about', groups: [ 'about' ] }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - autolink
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Save
+      - NewPage
+      - Preview
+      - Print
+      - Templates
+      - Find
+      - SelectAll
+      - Scayt
+      - Form
+      - Radio
+      - Checkbox
+      - TextField
+      - Textarea
+      - Select
+      - Button
+      - ImageButton
+      - HiddenField
+      - Underline
+      - CopyFormatting
+      - CreateDiv
+      - Blockquote
+      - Indent
+      - Outdent
+      - JustifyBlock
+      - Language
+      - Anchor
+      - Image
+      - Flash
+      - HorizontalRule
+      - Smiley
+      - PageBreak
+      - Iframe
+      - Font
+      - FontSize
+      - TextColor
+      - BGColor
+      - ShowBlocks
+      - About

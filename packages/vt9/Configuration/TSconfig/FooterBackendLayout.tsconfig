@@ -1,0 +1,35 @@
+mod.web_layout.BackendLayouts {
+  footer {
+    title = Footer Backend Layout
+    #icon = EXT:example_extension/Resources/Public/Images/BackendLayouts/default.gif
+    config {
+      backend_layout {
+        colCount = 3
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Footer Content Left
+                colPos = 100
+              }
+              2 {
+                name = Footer Content Center
+                colPos = 110
+              }
+              3 {
+                name = Footer Content Right
+                colPos = 120
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  1col >
+  1colslider >
+  2col >
+  3col >
+}

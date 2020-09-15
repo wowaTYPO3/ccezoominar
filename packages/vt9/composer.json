@@ -1,0 +1,29 @@
+{
+    "name": "wwagner/vt9",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Wolfgang Wagner",
+            "role": "Developer"
+        }
+    ],
+    "version": "1.0.0",
+    "require": {
+        "typo3/cms-core": "^9.5 || ^10.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wwagner\\Vt9\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wwagner\\Vt9\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "vt9": "self.version",
+        "typo3-ter/vt9": "self.version"
+    }
+}

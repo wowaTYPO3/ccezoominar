@@ -1,0 +1,51 @@
+{
+	"repositories": [
+		{
+			"type": "path",
+			"url": "./packages/vt9"
+		},
+		{
+			"type": "path",
+			"url": "./packages/my_mask_export"
+		}
+	],
+	"require": {
+		"typo3/cms-backend": "^10.4",
+		"typo3/cms-belog": "^10.4",
+		"typo3/cms-beuser": "^10.4",
+		"typo3/cms-core": "^10.4",
+		"typo3/cms-dashboard": "^10.4",
+		"typo3/cms-extbase": "^10.4",
+		"typo3/cms-extensionmanager": "^10.4",
+		"typo3/cms-filelist": "^10.4",
+		"typo3/cms-fluid": "^10.4",
+		"typo3/cms-fluid-styled-content": "^10.4",
+		"typo3/cms-frontend": "^10.4",
+		"typo3/cms-impexp": "^10.4",
+		"typo3/cms-info": "^10.4",
+		"typo3/cms-install": "^10.4",
+		"typo3/cms-lowlevel": "^10.4",
+		"typo3/cms-recordlist": "^10.4",
+		"typo3/cms-redirects": "^10.4",
+		"typo3/cms-reports": "^10.4",
+		"typo3/cms-rte-ckeditor": "^10.4",
+		"typo3/cms-scheduler": "^10.4",
+		"typo3/cms-seo": "^10.4",
+		"typo3/cms-setup": "^10.4",
+		"typo3/cms-t3editor": "^10.4",
+		"typo3/cms-tstemplate": "^10.4",
+		"helhum/typo3-console": "^6.3",
+		"wwagner/vt9": "^1.0",
+		"mask/mask": "^5.1",
+		"ichhabrecht/mask-export": "^3.0",
+		"mymaskexport/my-mask-export": "dev-master"
+	},
+	"scripts": {
+		"typo3-cms-scripts": [
+			"typo3cms install:fixfolderstructure"
+		],
+		"post-autoload-dump": [
+			"@typo3-cms-scripts"
+		]
+	}
+}

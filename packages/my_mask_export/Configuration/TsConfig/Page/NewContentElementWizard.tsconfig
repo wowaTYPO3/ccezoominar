@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+            accordeon {
+                iconIdentifier = tx_mymaskexport_accordeon
+                title = LLL:EXT:my_mask_export/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.accordeon_title
+                description = LLL:EXT:my_mask_export/Resources/Private/Language/locallang_db_new_content_el.xlf:wizards.newContentElement.accordeon_description
+                tt_content_defValues {
+                    CType = mymaskexport_accordeon
+                }
+            }
+    }
+    show := addToList(accordeon)
+}

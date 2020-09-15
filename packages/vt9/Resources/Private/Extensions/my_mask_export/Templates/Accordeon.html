@@ -1,0 +1,35 @@
+<div id="c{data.uid}">
+	<f:if condition="{data.header}">
+		<f:switch expression="{data.header_layout}">
+			<f:case value="0"><h2>{data.header}</h2></f:case>
+			<f:case value="1"><h1>{data.header}</h1></f:case>
+			<f:case value="2"><h2>{data.header}</h2></f:case>
+			<f:case value="3"><h3>{data.header}</h3></f:case>
+			<f:case value="4"><h4>{data.header}</h4></f:case>
+		</f:switch>
+	</f:if>
+	<div class="accordion" id="accordion{data.uid}">
+		<f:for each="{data_tx_mymaskexport_accordionelement}" as="data_item" iteration="el">
+			<div class="card">
+				<div class="card-header" id="heading{data.uid}-{el.cycle}">
+					<h2 class="mb-0">
+						<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+										data-target="#collapse{data.uid}-{el.cycle}" aria-expanded="true"
+										aria-controls="collapse{data.uid}-{el.cycle}">
+							{data_item.data.tx_mymaskexport_elementtitle}
+						</button>
+					</h2>
+				</div>
+				<div id="collapse{data.uid}-{el.cycle}" class="collapse{f:if(condition: el.isFirst, then: ' show')}"
+						 aria-labelledby="heading{data.uid}-{el.cycle}" data-parent="#accordion{data.uid}">
+					<div class="card-body">
+						<f:for each="{data_item.data_tx_mymaskexport_elementcontent}" as="content_item">
+							<f:cObject typoscriptObjectPath="tt_content" data="{content_item.data}" table="tt_content"/>
+							<br/>
+						</f:for>
+					</div>
+				</div>
+			</div>
+		</f:for>
+	</div>
+</div>

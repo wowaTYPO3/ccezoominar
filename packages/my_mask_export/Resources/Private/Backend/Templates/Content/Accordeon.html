@@ -1,0 +1,18 @@
+<f:if condition="{processedRow.header}">
+    <strong><f:translate key="LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header" /></strong>
+    {processedRow.header} (raw={row.header})<br>
+</f:if>
+<f:if condition="{processedRow.header_layout}">
+    <strong><f:translate key="LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.type" /></strong>
+    {processedRow.header_layout.0} (raw={row.header_layout})<br>
+</f:if>
+<f:if condition="{processedRow.tx_mymaskexport_accordionelement}">
+    <strong><f:translate key="LLL:EXT:my_mask_export/Resources/Private/Language/locallang_db.xlf:tt_content.tx_mymaskexport_accordionelement" /></strong>
+<br><f:for each="{processedRow.tx_mymaskexport_accordionelement}" as="item">
+    <ul>
+        <li>
+            <f:translate key="LLL:EXT:my_mask_export/Resources/Private/Language/locallang_db.xlf:tx_mymaskexport_accordionelement.tx_mymaskexport_elementtitle" /> {item.tx_mymaskexport_elementtitle} (id={item.uid})<br/>
+        </li>
+    </ul>
+</f:for>
+</f:if>

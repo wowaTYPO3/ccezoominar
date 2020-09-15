@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2020-09-15T18:38:27+02:00" product-name="my_mask_export">
+    <header/>
+    <body>
+      <trans-unit id="tx_mymaskexport_accordionelement">
+        <source>tx_mymaskexport_accordionelement</source>
+      </trans-unit>
+      <trans-unit id="tx_mymaskexport_accordionelement.tx_mymaskexport_elementcontent">
+        <source>Inhalt</source>
+      </trans-unit>
+      <trans-unit id="tx_mymaskexport_accordionelement.tx_mymaskexport_elementtitle">
+        <source>Titel/Überschrift</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_mymaskexport_accordionelement">
+        <source>Akkordeon-Element</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.div._mymaskexport_">
+        <source>my_mask_export</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.mymaskexport_accordeon">
+        <source>Akkordion</source>
+      </trans-unit>
+      <trans-unit id="tt_content.colPos.nestedContentColPos">
+        <source>Nested content (my_mask_export)</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

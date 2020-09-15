@@ -1,0 +1,144 @@
+page = PAGE
+
+## Meta-Tags
+page.meta {
+    viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+}
+
+## Favicon
+page.shortcutIcon = EXT:vt9/Resources/Public/Icons/favicon.png
+
+## CSS Dateien laden
+page.includeCSS {
+    10 = EXT:vt9/Resources/Public/Css/bootstrap.min.css
+    10.disableCompression = 1
+    20 = EXT:vt9/Resources/Public/Css/modern-business.css
+    30 = EXT:vt9/Resources/Public/Css/jquery.smartmenus.bootstrap-4.css
+    35 = EXT:vt9/Resources/Public/Css/lightcase.css
+    40 = EXT:vt9/Resources/Public/Css/customstyles.css
+}
+
+## JavaScript laden
+page.includeJSFooterlibs {
+    10 = EXT:vt9/Resources/Public/JavaScript/jquery.min.js
+    20 = EXT:vt9/Resources/Public/JavaScript/bootstrap.bundle.min.js
+    30 = EXT:vt9/Resources/Public/JavaScript/jquery.smartmenus.min.js
+    40 = EXT:vt9/Resources/Public/JavaScript/jquery.smartmenus.bootstrap-4.min.js
+    50 = EXT:vt9/Resources/Public/JavaScript/lightcase.js
+    60 = EXT:vt9/Resources/Public/JavaScript/vt9custom.js
+}
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    layoutRootPath = EXT:vt9/Resources/Private/Layouts/
+    partialRootPath = EXT:vt9/Resources/Private/Partials/
+
+    #file = EXT:vt9/Resources/Private/Templates/1colslider.html
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.data = pagelayout
+
+        pagets__1col = TEXT
+        pagets__1col.value = EXT:vt9/Resources/Private/Templates/1col.html
+
+        pagets__1colslider = TEXT
+        pagets__1colslider.value = EXT:vt9/Resources/Private/Templates/1colslider.html
+
+        pagets__2col = TEXT
+        pagets__2col.value = EXT:vt9/Resources/Private/Templates/2col.html
+
+        pagets__3col = TEXT
+        pagets__3col.value = EXT:vt9/Resources/Private/Templates/3col.html
+
+        pagets__submenuleft = TEXT
+        pagets__submenuleft.value = EXT:vt9/Resources/Private/Templates/Submenu-left.html
+
+        default < .pagets__2col
+    }
+
+    variables {
+        content0 < styles.content.get
+
+        content1 < styles.content.get
+        content1.select.where = colPos = 1
+
+        content2 < styles.content.get
+        content2.select.where = colPos = 2
+
+        content3 < styles.content.get
+        content3.select.where = colPos = 3
+
+        content4 < styles.content.get
+        content4.select.where = colPos = 4
+
+        content5 < styles.content.get
+        content5.select.where = colPos = 5
+
+        ## Footer Inhalte
+        content100 < styles.content.get
+        content100.select.where = colPos = 100
+        content100.select.pidInList = {$vt9.footerContentId}
+
+        content110 < .content100
+        content110.select.where = colPos = 110
+
+        content120 < .content100
+        content120.select.where = colPos = 120
+    }
+
+    settings {
+        siteLogo = {$vt9.siteLogo}
+        siteTitle = {$vt9.siteTitle}
+        rootId = {$vt9.rootId}
+    }
+
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            as = mainMenu
+            expandAll = 1
+            titleField = nav_title // title
+            levels = 6
+            dataProcessing.10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            dataProcessing.10 {
+                references.fieldName = media
+            }
+        }
+
+        20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        20 {
+            as = metaMenu
+            titleField = nav_title // title
+            levels = 1
+            special = directory
+            special.value = {$vt9.metaId}
+        }
+
+        30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        30 {
+            as = rootline
+            titleField = nav_title // title
+            special = rootline
+            special.range = 0|-1
+        }
+
+        40 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        40 {
+            languages = auto
+            as = languageMenu
+        }
+
+        50 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        50 {
+            as = subMenu
+            titleField = nav_title // title
+            expandAll = 1
+            entryLevel = -1
+            levels = 2
+        }
+    }
+}
+
+page.bodyTagCObject = TEXT
+page.bodyTagCObject.data = pagelayout
+page.bodyTagCObject.wrap = <body class="layout-|">

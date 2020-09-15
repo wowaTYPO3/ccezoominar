@@ -1,0 +1,13 @@
+lib.contentElement.templateRootPaths {
+    100 = EXT:vt9/Resources/Private/Extensions/fluid_styled_content/Templates/
+}
+lib.contentElement.partialRootPaths {
+  100 = EXT:vt9/Resources/Private/Extensions/fluid_styled_content/Partials/
+}
+
+lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap =  data-rel="lightcase:{file:current:uid_foreign}"
+
+## Ausgabe der Standard CSS-Klasse für Tabellen deaktivieren
+## damit Klasse aus einer eigene CKEditor Konfig ausgegeben werden
+## Siehe https://wiki.wwagner.info/typo3-snippets/ckeditor-eigene-css-klassen-fuer-tabellen-im-rte
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list >

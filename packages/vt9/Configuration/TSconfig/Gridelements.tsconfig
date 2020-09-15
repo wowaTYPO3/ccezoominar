@@ -1,0 +1,55 @@
+tx_gridelements.setup {
+  2col {
+    title = 2 Columns
+    icon = EXT:vt9/Resources/Public/Icons/Gridelements/2col.png
+    flexformDS = FILE:EXT:vt9/Configuration/TypoScript/Setup/gridelements_2col.xml
+    config {
+        colCount = 2
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Left
+                colPos = 10
+              }
+              2 {
+                name = Right
+                colPos = 20
+              }
+            }
+          }
+        }
+    }
+  }
+}
+
+tx_gridelements.setup {
+  3col {
+    title = 3 Columns
+    icon = EXT:vt9/Resources/Public/Icons/Gridelements/3col.png
+    flexformDS = FILE:EXT:vt9/Configuration/TypoScript/Setup/gridelements_3col.xml
+    config {
+      colCount = 3
+      rowCount = 1
+      rows {
+        1 {
+          columns {
+            1 {
+              name = Left
+              colPos = 10
+            }
+            2 {
+              name = Center
+              colPos = 20
+            }
+            3 {
+              name = Right
+              colPos = 30
+            }
+          }
+        }
+      }
+    }
+  }
+}

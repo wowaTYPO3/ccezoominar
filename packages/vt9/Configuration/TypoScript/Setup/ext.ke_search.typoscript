@@ -1,0 +1,34 @@
+plugin.tx_kesearch_pi1.view.templateRootPaths.100 = EXT:vt9/Resources/Private/Extensions/ke_search/Templates/
+
+lib.searchbox = COA
+lib.searchbox {
+    10 = TEXT
+    10 {
+        typolink.parameter = {$vt9.searchId}
+        typolink.returnLast = url
+        wrap = <form class="form-inline my-2 my-lg-0" method="get" id="form_kesearch_searchfield" name="form_kesearch_searchfield" action="|">
+    }
+
+    20 = TEXT
+    20.value = Suche nach...
+    20.wrap = <input class="form-control mr-sm-2" type="text" id="ke_search_searchfield_sword" name="tx_kesearch_pi1[sword]" placeholder="|" />
+
+    30 = TEXT
+    30.value = Suche
+    30.wrap = <button class="btn btn-success my-2 my-sm-0" type="submit" id="ke_search_searchfield_submit">|</button></form>
+}
+
+#page.10.variables.searchbox < lib.searchbox
+page.10.variables.searchbox >
+[page["uid"] == {$vt9.searchId}]
+page.10.variables.searchbox >
+[END]
+
+
+
+/*
+<form method="get" id="form_kesearch_searchfield" name="form_kesearch_searchfield" action="/search/">
+  <input type="text" id="ke_search_searchfield_sword" name="tx_kesearch_pi1[sword]" placeholder="Your search phrase" />
+  <input type="submit" id="ke_search_searchfield_submit" alt="Find" />
+</form>
+*/

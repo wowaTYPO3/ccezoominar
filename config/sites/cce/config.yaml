@@ -1,0 +1,20 @@
+base: 'https://ccezoominar.ddev.site/'
+baseVariants: {  }
+errorHandling: {  }
+languages:
+  -
+    title: Deutsch
+    enabled: true
+    languageId: '0'
+    base: /
+    typo3Language: de
+    locale: de_de.utf8
+    iso-639-1: de
+    navigationTitle: DE
+    hreflang: de-de
+    direction: ltr
+    flag: de
+    websiteTitle: ''
+rootPageId: 1
+routes: {  }
+websiteTitle: 'Custom Content Elements'

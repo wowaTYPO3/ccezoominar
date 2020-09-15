@@ -1,0 +1,26 @@
+{
+    "name": "mymaskexport/my-mask-export",
+    "description": "",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-backend": "^10.4",
+        "typo3/cms-core": "^10.4",
+        "typo3/cms-extbase": "^10.4",
+        "typo3/cms-fluid": "^10.4",
+        "typo3/cms-frontend": "^10.4"
+    },
+    "replace": {
+        "typo3-ter/my-mask-export": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyMaskExport\\MyMaskExport\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "my_mask_export"
+        }
+    }
+}

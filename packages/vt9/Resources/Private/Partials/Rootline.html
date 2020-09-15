@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+ 
+<f:if condition="{rootline}">
+    <div class="container">
+        <ul class="rootline">
+            <f:for each="{rootline}" as="rootlineItem">
+                <f:if condition="{rootlineItem.current}">
+                    <f:then>
+                        <li><span>{rootlineItem.title}</span></li>
+                    </f:then>
+                    <f:else>
+                        <li><a href="{rootlineItem.link}">{rootlineItem.title}</a></li>
+                    </f:else>
+                </f:if>
+            </f:for>
+        </ul>
+    </div>
+</f:if>
+
+</f:spaceless>
+</html>

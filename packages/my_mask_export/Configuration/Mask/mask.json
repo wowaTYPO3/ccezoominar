@@ -1,0 +1,143 @@
+{
+    "tt_content": {
+        "elements": {
+            "accordeon": {
+                "color": "#000000",
+                "columns": [
+                    "header",
+                    "header_layout",
+                    "tx_mask_accordionelement"
+                ],
+                "description": "Die Beschreibung ...",
+                "icon": "",
+                "key": "accordeon",
+                "label": "Akkordion",
+                "labels": [
+                    "\u00dcberschrift des Akkordeons",
+                    "Art der \u00dcberschrift",
+                    "Akkordeon-Element"
+                ],
+                "shortLabel": "Kurzer Titel des Akkordeons"
+            }
+        },
+        "sql": {
+            "tx_mask_accordionelement": {
+                "tt_content": {
+                    "tx_mask_accordionelement": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_accordionelement": {
+                "config": {
+                    "appearance": {
+                        "enabledControls": {
+                            "dragdrop": "1"
+                        },
+                        "expandSingle": "1",
+                        "levelLinksPosition": "both",
+                        "newRecordLinkTitle": "Neues Element",
+                        "useSortable": "1"
+                    },
+                    "foreign_field": "parentid",
+                    "foreign_sortby": "sorting",
+                    "foreign_table": "--inlinetable--",
+                    "foreign_table_field": "parenttable",
+                    "maxitems": "",
+                    "minitems": "",
+                    "type": "inline"
+                },
+                "description": "",
+                "exclude": "1",
+                "inlineIcon": "",
+                "inlineLabel": "",
+                "key": "accordionelement",
+                "l10n_mode": ""
+            }
+        }
+    },
+    "tx_mask_accordionelement": {
+        "sql": {
+            "tx_mask_elementcontent": {
+                "tx_mask_accordionelement": {
+                    "tx_mask_elementcontent": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_elementtitle": {
+                "tx_mask_accordionelement": {
+                    "tx_mask_elementtitle": "tinytext"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_elementcontent": {
+                "cTypes": [
+                    "textmedia",
+                    "table",
+                    "shortcut",
+                    "list"
+                ],
+                "config": {
+                    "appearance": {
+                        "collapseAll": "1",
+                        "enabledControls": {
+                            "dragdrop": "1"
+                        },
+                        "levelLinksPosition": "top",
+                        "newRecordLinkTitle": "",
+                        "showAllLocalizationLink": "1",
+                        "showPossibleLocalizationRecords": "1",
+                        "showSynchronizationLink": "1",
+                        "useSortable": "1"
+                    },
+                    "foreign_sortby": "sorting",
+                    "foreign_table": "tt_content",
+                    "maxitems": "3",
+                    "minitems": "1",
+                    "overrideChildTca": {
+                        "columns": {
+                            "colPos": {
+                                "config": {
+                                    "default": "999"
+                                }
+                            }
+                        }
+                    },
+                    "type": "inline"
+                },
+                "description": "",
+                "exclude": "1",
+                "inlineParent": "tx_mask_accordionelement",
+                "key": "elementcontent",
+                "l10n_mode": "",
+                "label": "Inhalt",
+                "order": 4
+            },
+            "tx_mask_elementtitle": {
+                "config": {
+                    "default": "",
+                    "eval": "required,trim",
+                    "is_in": "",
+                    "max": "",
+                    "placeholder": "",
+                    "size": "",
+                    "type": "input"
+                },
+                "description": "",
+                "exclude": "1",
+                "inlineParent": "tx_mask_accordionelement",
+                "key": "elementtitle",
+                "l10n_mode": "",
+                "label": "Titel\/\u00dcberschrift",
+                "order": 3
+            }
+        }
+    },
+    "mask_export": {
+        "extensionName": "my_mask_export",
+        "vendorName": "MyMaskExport",
+        "includedElements": [
+            "accordeon"
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+<f:if condition="{data.header}">
+    {data.header}<br />
+</f:if>
+
+<f:if condition="{data.header_layout}">
+    <f:switch expression="{data.header_layout}">
+        <f:case value="1">Value is: 1</f:case>
+        <f:case value="2">Value is: 2</f:case>
+        <f:case value="3">Value is: 3</f:case>
+    </f:switch><br />
+</f:if>
+
+<f:if condition="{data_tx_mymaskexport_accordionelement}">
+    <ul>
+        <f:for each="{data_tx_mymaskexport_accordionelement}" as="data_item">
+            <li>
+                <f:if condition="{data_item.data_tx_mymaskexport_elementcontent}">
+    <f:for each="{data_item.data_tx_mymaskexport_elementcontent}" as="content_item">
+        <f:cObject typoscriptObjectPath="tt_content" data="{content_item.data}" table="tt_content" /><br />
+    </f:for>
+</f:if>
+
+<f:if condition="{data_item.data.tx_mymaskexport_elementtitle}">
+    {data_item.data.tx_mymaskexport_elementtitle}<br />
+</f:if>
+
+
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+

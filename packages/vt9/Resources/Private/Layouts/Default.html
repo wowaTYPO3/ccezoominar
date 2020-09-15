@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+<f:render partial="MainMenu" arguments="{_all}"/>
+
+<f:if condition="!{data.is_siteroot}">
+    <f:render partial="Rootline" arguments="{_all}"/>
+</f:if>
+
+<f:render section="Main"/>
+
+<f:render partial="Footer" arguments="{_all}"/>
+ 
+</f:spaceless>
+</html>

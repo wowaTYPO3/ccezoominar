@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+/var/*
+!/var/labels
+/vendor
+/public/*
+!/public/.htaccess
+!/public/typo3conf
+/public/typo3conf/*
+!/public/typo3conf/AdditionalConfiguration.php
+*.sql
+*.gz

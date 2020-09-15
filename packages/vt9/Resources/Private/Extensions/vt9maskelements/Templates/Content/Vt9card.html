@@ -1,0 +1,37 @@
+<div id="c{data.uid}">
+    <div class="card h-100">
+        <f:if condition="{data.header}">
+            <h4 class="card-header">{data.header}</h4>
+        </f:if>
+
+        <f:if condition="{data_image}">
+            <f:if condition="{data.tx_vt9maskelements_vt9cardbuttonlink}">
+                <f:then>
+                    <f:link.typolink parameter="{data.tx_vt9maskelements_vt9cardbuttonlink}">
+                        <f:for each="{data_image}" as="file">
+                            <f:image class="card-image-top" image="{file}" alt="{file.alternative}" title="{file.title}" />
+                        </f:for>
+                    </f:link.typolink>
+                </f:then>
+                <f:else>
+                    <f:for each="{data_image}" as="file">
+                        <f:image class="card-image-top" image="{file}" alt="{file.alternative}" title="{file.title}" />
+                    </f:for>
+                </f:else>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{data.bodytext}">
+            <div class="card-body">
+                <div class="card-text">
+                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                </div>
+            </div>
+        </f:if>
+        <f:if condition="{data.tx_vt9maskelements_vt9cardbuttontext}">
+            <div class="card-footer">
+                <f:link.typolink parameter="{data.tx_vt9maskelements_vt9cardbuttonlink}" class="btn btn-primary">{data.tx_vt9maskelements_vt9cardbuttontext}</f:link.typolink>
+            </div>
+        </f:if>
+    </div>
+</div>

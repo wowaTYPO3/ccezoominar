@@ -1,0 +1,35 @@
+TCEFORM.tt_content.header_layout {
+    altLabels {
+        0 = h2 - Themenüberschrift
+        1 = h1 - Seitenüberschrift
+        2 = h2
+        3 = h3 - Überschrift 3. Ordnung
+        4 = h4 - Überschrift 4. Ordnung
+        5 = h5 - Überschrift 5. Ordnung
+    }
+    removeItems = 2,5
+
+    addItems {
+      7 = h1 - Roter Hintergrund
+      8 = h2 - Grüner Hintergrund
+    }
+}
+
+TCEFORM.tt_content.layout.addItems {
+    5 = Responsive Video
+}
+
+TCEFORM.tt_content.layout.types.uploads.addItems {
+    200 = Galerie
+}
+
+## RTE
+RTE.default.preset = vt9
+#RTE.default.preset = default
+#RTE.default.preset = full
+#RTE.default.preset = minimal
+
+TCEMAIN.permissions {
+    group = show,editcontent,edit,new,delete
+    groupid = 1
+}

@@ -1,0 +1,27 @@
+@import "EXT:vt9/Configuration/TypoScript/Constants/*.typoscript"
+
+styles.content.textmedia.linkWrap.lightboxEnabled = 1
+styles.content.textmedia.linkWrap.width = 1200m
+styles.content.textmedia.linkWrap.height = 1200m
+
+# customcategory=vt9=TYPO3 9 Videotraining Sitepackage
+
+vt9 {
+  # cat=vt9/file/a; type=string; label=Logo-Datei:Pfad zum Logo
+  siteLogo = EXT:vt9/Resources/Public/Images/logo-light.png
+
+  # cat=vt9/file/b; type=string; label=Titel der Website:Wird im Footer ausgegeben, und als title-Attribut im Link zur Homepage
+  siteTitle = TYPO3 9 Videotraining Startseite
+
+  # cat=vt9/links/a; type=int+; label=ID der Root-Seite:Wird zur Erzeugung des Links zur Homepage benötigt
+  rootId = 1
+
+  # cat=vt9/links/b; type=int+; label=ID der Seite für das Meta-Menü
+  metaId = 28
+
+  # cat=vt9/links/c; type=int+; label=ID der Seite für die Inhalte des Fuoters
+  footerContentId = 32
+
+  # cat=vt9/links/d; type=int+; label=ID der Seite mit dem Suchformular
+  searchId = 69
+}

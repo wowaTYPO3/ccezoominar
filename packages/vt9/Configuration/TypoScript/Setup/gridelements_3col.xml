@@ -1,0 +1,43 @@
+<T3DataStructure>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>
+						Settings
+					</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<columnType>
+						<TCEforms>
+							<label>Column variants</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items>
+									<numIndex index="1">
+										<numIndex index="0">1:1:1</numIndex>
+										<numIndex index="1">cols-1-1-1</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">1:2:1</numIndex>
+										<numIndex index="1">cols-1-2-1</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">2:1:1</numIndex>
+										<numIndex index="1">cols-2-1-1</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">1:1:2</numIndex>
+										<numIndex index="1">cols-1-1-2</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</columnType>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>
