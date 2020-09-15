@@ -16,3 +16,5 @@ Backend starten:
 
 `ddev launch /typo3`
 
+Benutzername: admin\
+Passwort: password
